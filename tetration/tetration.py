@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from typing import Callable
 
 def tetration(n,m):
     r = n
@@ -7,7 +8,7 @@ def tetration(n,m):
         r *= r
     return r
 
-def df(f: callable, x: float, fargs: list = [], h: float = 1e-10) -> float:
+def df(f: Callable, x: float, fargs: list = [], h: float = 1e-10) -> float:
     expr = f(x + h, *fargs) - f(x, *fargs)
     return expr / h
 
